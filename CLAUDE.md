@@ -1,0 +1,21 @@
+# Personal Site
+
+Static personal website for Pablo Defendini. Plain HTML + CSS, no build tools.
+
+## Structure
+- `site/` — All deployable files. This directory is published to GitHub Pages.
+- `reference/` — PDF portfolio/resume files (not deployed).
+
+## Tech
+- No build step, no dependencies, no frameworks
+- Three swappable CSS themes (style.css, style-b.css, style-c.css)
+- Bilingual EN/ES via `lang` attributes + JS toggle
+- Dark/light mode via JS toggle
+
+## Deploy
+- GitHub Actions workflow (`.github/workflows/deploy.yml`) deploys `site/` to GitHub Pages on push to `main`
+- Live at: https://pablodefendini.github.io/personal-site/
+
+## Conventions
+- When editing HTML pages, update all pages that share the same nav/footer structure (index.html, work.html, blog.html) — concepts.html is standalone
+- Blog posts link to external articles, not local files
