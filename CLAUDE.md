@@ -18,4 +18,6 @@ Static personal website for Pablo Defendini. Plain HTML + CSS, no build tools.
 
 ## Conventions
 - When editing HTML pages, update all pages that share the same nav/footer structure (index.html, work.html, blog.html) — concepts.html is standalone
-- Blog posts link to external articles, not local files
+- Blog is a link blog — each post points to an external article
+- Each link post stays in the language of the target article (title, date, excerpt, source label)
+- The blog stream is naturally bilingual; the language toggle only affects page chrome, not posts

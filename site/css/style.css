@@ -240,9 +240,22 @@ strong {
 }
 
 .blog-post-preview {
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--rule-light);
+}
+
+.blog-post-preview p {
+  margin-bottom: 0.3rem;
+}
+
+.blog-post-preview .source {
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 0.75rem;
+  color: var(--fg-faint);
+  letter-spacing: 0.02em;
+  font-style: italic;
+  margin-bottom: 0;
 }
 
 .blog-post-preview time {
