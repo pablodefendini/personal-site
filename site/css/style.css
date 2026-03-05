@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Concept A: "The Broadsheet"
+
+   Newspaper editorial. Columnar feel, serif body, big condensed headlines,
+   thin rules, date-stamp metadata. Like a well-designed section front from
+   a serious paper. Light mode is warm newsprint; dark mode is ink-on-slate.
+   ========================================================================== */
+
+/* --- Reset & Base --- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f7f5f0;
+  --fg: #1a1a1a;
+  --fg-headline: #0a0a0a;
+  --fg-muted: #666;
+  --fg-faint: #999;
+  --rule: #c8c3b8;
+  --rule-light: #ddd8ce;
+  --accent: #c0392b;
+  --link: #1a1a1a;
+  --link-hover: #c0392b;
+}
+
+html[data-mode="dark"] {
+  --bg: #1e1e1c;
+  --fg: #c8c4bb;
+  --fg-headline: #e8e4da;
+  --fg-muted: #8a8680;
+  --fg-faint: #6a6660;
+  --rule: #3a3835;
+  --rule-light: #2e2c29;
+  --accent: #e05a4f;
+  --link: #c8c4bb;
+  --link-hover: #e05a4f;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--fg);
+  background-color: var(--bg);
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* --- Typography --- */
+
+h1 {
+  font-size: 2.6rem;
+  line-height: 1.08;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: var(--fg-headline);
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  color: var(--fg-headline);
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* --- Header --- */
+
+.site-header {
+  margin-bottom: 3rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--fg-headline);
+}
+
+.site-header::after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid var(--rule);
+  margin-top: 3px;
+}
+
+.site-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--fg-headline);
+  letter-spacing: -0.01em;
+}
+
+.site-name:hover {
+  color: var(--accent);
+}
+
+.site-header ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.site-header ul a {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--fg-muted);
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.site-header ul a:hover,
+.site-header ul a.active {
+  color: var(--fg-headline);
+}
+
+/* --- Homepage --- */
+
+.intro {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.lede {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: var(--fg-muted);
+}
+
+.about {
+  margin-bottom: 3rem;
+}
+
+.contact {
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.contact h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+/* --- Work --- */
+
+.work-intro {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.case-study {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.case-study:last-child {
+  border-bottom: none;
+}
+
+.case-study-header {
+  margin-bottom: 1rem;
+}
+
+.case-study-header h2 {
+  margin-bottom: 0.15rem;
+}
+
+.meta {
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 0.78rem;
+  color: var(--fg-faint);
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.02em;
+}
+
+.roles {
+  font-size: 0.8rem;
+  color: var(--fg-faint);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.case-study-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Blog --- */
+
+.blog-intro {
+  margin-bottom: 3rem;
+}
+
+.blog-list {
+  margin-bottom: 3rem;
+}
+
+.blog-post-preview {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.blog-post-preview time {
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 0.75rem;
+  color: var(--fg-faint);
+  display: block;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.blog-post-preview h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-preview h2 a {
+  text-decoration: none;
+}
+
+.blog-post-preview h2 a:hover {
+  text-decoration: underline;
+}
+
+.empty-state {
+  color: var(--fg-faint);
+  font-style: italic;
+}
+
+/* --- Footer --- */
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--fg-headline);
+  font-size: 0.78rem;
+  color: var(--fg-faint);
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+}
+
+.site-footer::before {
+  content: '';
+  display: block;
+  border-top: 1px solid var(--rule);
+  margin-bottom: 3px;
+  margin-top: -3px;
+  position: relative;
+  top: -0.75rem;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .lede {
+    font-size: 1.15rem;
+  }
+
+  body {
+    padding: 1.5rem 1rem;
+  }
+
+  .site-header {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Design Concepts — Pablo Defendini</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: #111;
+      color: #ccc;
+      padding: 2rem;
+      max-width: 50rem;
+      margin: 0 auto;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff; }
+    .subtitle { color: #888; margin-bottom: 2rem; }
+    .concept { margin-bottom: 3rem; padding: 2rem; border-radius: 8px; background: #1a1a1a; border: 1px solid #333; }
+    .concept h2 { font-size: 1.3rem; color: #fff; margin-bottom: 0.25rem; }
+    .concept .tag { font-size: 0.8rem; color: #888; margin-bottom: 1rem; display: block; }
+    .concept p { margin-bottom: 0.8rem; line-height: 1.6; }
+    .concept .how { font-size: 0.85rem; color: #999; border-top: 1px solid #2a2a2a; padding-top: 1rem; margin-top: 1rem; }
+    a { color: #6db3f2; }
+  </style>
+</head>
+<body>
+
+<h1>Three Visual Concepts</h1>
+<p class="subtitle">Each concept uses the same HTML. Just swap the CSS file in the &lt;link&gt; tag.</p>
+
+<div class="concept">
+  <h2>Concept A: Editorial Minimalist</h2>
+  <span class="tag">css/style.css (default)</span>
+  <p>Clean, high-contrast, type-driven. Serif headlines (Georgia) on a warm off-white background. Generous whitespace, restrained palette — black text, subtle red hover accents, quiet rules between sections. The vibe is an independent literary magazine or a long-form journalism site.</p>
+  <p>This is the most classic option. It signals "writer and thinker who also designs" rather than "designer first." It lets the writing breathe.</p>
+  <p class="how">To preview: open index.html — it uses this concept by default.</p>
+</div>
+
+<div class="concept">
+  <h2>Concept B: Warm Brutalist</h2>
+  <span class="tag">css/style-b.css</span>
+  <p>Raw, high-energy, utilitarian. Monospace body text (Courier) with bold Helvetica headlines in uppercase. A warm paper-toned background with a burnt orange accent color. Dashed borders, left-border markers on case study headers, visible structure. Inspired by zine culture, open-source aesthetics, and the kind of thing you'd build in a terminal.</p>
+  <p>This is the most opinionated option. It signals "I've shipped real things and I don't need polish to prove it." It has personality. Some people will love it, some won't — which is kind of the point.</p>
+  <p class="how">To preview: change the CSS link in any HTML file from <code>css/style.css</code> to <code>css/style-b.css</code></p>
+</div>
+
+<div class="concept">
+  <h2>Concept C: Dark Mode Modernist</h2>
+  <span class="tag">css/style-c.css</span>
+  <p>Dark background, system sans-serif type, soft blue link accents against warm gray text. Monospace timestamps. Minimal ornamentation — the dark background does the design work by making the type feel quiet and intentional. Inspired by developer tools, editorial dark modes, and reading apps.</p>
+  <p>This is the most "tech" option. It signals comfort with code and tools without looking like a developer portfolio. Good if the audience is primarily people in the civic tech and political technology space.</p>
+  <p class="how">To preview: change the CSS link in any HTML file from <code>css/style.css</code> to <code>css/style-c.css</code></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Language Toggle Styles
+
+   Works with lang.js to show/hide content based on the current language.
+   Default language is English. When html[lang="es"] is set, Spanish
+   content is shown and English content is hidden.
+
+   Usage: Add lang="en" or lang="es" to any element that has a
+   language-specific counterpart.
+   ========================================================================== */
+
+/* By default (English), hide all Spanish elements inside body */
+body [lang="es"] {
+  display: none;
+}
+
+/* When the page is set to Spanish, show Spanish and hide English */
+html[lang="es"] body [lang="es"] {
+  display: revert;
+}
+
+html[lang="es"] body [lang="en"] {
+  display: none;
+}
+
+/* Language toggle button — base styles that work across all three concepts */
+.lang-toggle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.2em 0.5em;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.lang-toggle:hover {
+  opacity: 0.7;
+}
+
+/* Theme switcher */
+.theme-switcher {
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
+}
+
+.theme-btn {
+  font-size: 0.7rem;
+  font-weight: 600;
+  width: 1.6em;
+  height: 1.6em;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+  font-family: inherit;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-btn:hover {
+  opacity: 0.7;
+}
+
+.theme-btn.active {
+  background: currentColor;
+}
+
+/* Invert the text color when active — works across light and dark themes */
+.theme-btn.active span {
+  filter: invert(1);
+}
+
+/* Dark / Light mode toggle */
+.mode-toggle {
+  font-size: 1rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-toggle:hover {
+  opacity: 0.6;
+}
