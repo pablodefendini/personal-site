@@ -9,14 +9,20 @@ The `site/` directory contains a complete, working personal website with three p
 ```
 site/
 ├── index.html          Homepage — bio, about, contact
-├── portfolio.html      12 case studies, reverse chronological
-├── blog.html           Blog listing page (empty state, ready for posts)
+├── work.html           Case studies, reverse chronological
+├── blog.html           Blog listing — link posts + essay previews, interspersed
 ├── concepts.html       Side-by-side description of the three visual concepts
-└── css/
-    ├── style.css       Concept A: Editorial Minimalist (default)
-    ├── style-b.css     Concept B: Warm Brutalist
-    └── style-c.css     Concept C: Dark Mode Modernist
+├── posts/              Standalone essay pages (one HTML file per essay)
+├── css/
+│   ├── style.css       Concept A: Editorial Minimalist (default)
+│   ├── style-b.css     Concept B: Warm Brutalist
+│   └── style-c.css     Concept C: Dark Mode Modernist
+└── js/
+    ├── lang.js         EN/ES language toggle
+    └── theme.js        Dark/light mode toggle
 ```
+
+The blog supports two post types in a single feed: **link posts** (pointers to external articles, defined inline in `blog.html`) and **essays** (full posts hosted at `posts/[slug].html` with a visually distinct preview on the listing). See `CLAUDE.md` for the conventions.
 
 ## Tech Stack: What's Here Now (Lightest Possible)
 
